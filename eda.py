@@ -66,6 +66,24 @@ def cat_summary(dataframe, col_name, plot=False):
 #############################################
 
 def num_summary(dataframe, numerical_col, plot=False):
+    """
+    Describe and plot numerical variables
+    Parameters
+    ----------
+    dataframe: Pandas dataframe
+                Dataframe contains numerical variables
+    numerical_col: string
+                    Name of numerical column
+    plot: Boolean
+            Default: False
+            If plot true plots histogram
+    Returns
+    -------
+
+    Examples
+            num_summary(df, num_col, plot=True)
+    """
+
     quantiles = [0.05, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 0.95, 0.99]
     print(dataframe[numerical_col].describe(quantiles).T)
 
